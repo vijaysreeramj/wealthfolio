@@ -301,3 +301,9 @@ table.table { width: 100%; border-collapse: collapse; }
 .filters { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; padding: 14px 16px; border-bottom: 1px solid var(--border); }
 .filters .input, .filters .select { width: auto; height: 34px; }
 .filters .search { flex: 1; min-width: 180px; }
+
+/* Two-column layout: form on the left, results on the right */
+.split { display: grid; gap: 16px; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); align-items: start; }
+.split-side { position: sticky; top: calc(var(--topbar-h) + 16px); }
+@media (max-width: 900px) { .split { grid-template-columns: minmax(0, 1fr); } .split-side { position: static; } }
+.input-prefix span.suffix { left: auto; right: 12px; }
