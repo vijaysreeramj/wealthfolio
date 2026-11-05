@@ -277,6 +277,8 @@ class Goal(TimestampMixin, Base):
     risk_preference: Mapped[str] = mapped_column(String(10), default="low")
     conservative_return_pct: Mapped[Decimal] = mapped_column(Rate, default=Decimal("6.5"))
     moderate_return_pct: Mapped[Decimal] = mapped_column(Rate, default=Decimal("10"))
+    # What the user plans to save each month; used to estimate the completion date
+    monthly_contribution: Mapped[Decimal | None] = mapped_column(Money)
     notes: Mapped[str | None] = mapped_column(String(255))
 
 

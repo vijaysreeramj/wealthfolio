@@ -7,6 +7,7 @@ import Auth from './pages/Auth'
 import Budgets from './pages/Budgets'
 import Dashboard from './pages/Dashboard'
 import Fire from './pages/Fire'
+import Goals from './pages/Goals'
 import NetWorth from './pages/NetWorth'
 import Investments from './pages/Investments'
 import Placeholder from './pages/Placeholder'
@@ -33,7 +34,7 @@ export default function App() {
         <Route path="budgets" element={<Budgets />} />
         <Route path="investments" element={<Investments />} />
         <Route path="net-worth" element={<NetWorth />} />
-        <Route path="goals" element={<Placeholder title="Financial Goals" icon="goals" />} />
+        <Route path="goals" element={<Goals />} />
         <Route path="fire" element={<Fire />} />
         <Route path="advisor" element={<Placeholder title="AI Financial Advisor" icon="advisor" />} />
         <Route path="settings" element={<Settings />} />
