@@ -2,6 +2,14 @@
 
 A simple, modern personal finance tracker for India: budgets, investments, net worth, goals, FIRE planning and an AI financial advisor that thinks like a risk-aware Indian equity research analyst. All amounts are in Indian Rupees with lakh/crore formatting.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/dashboard-dark.png" />
+  <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/dashboard-light.png" />
+  <img alt="Wealthfolio dashboard showing monthly income, expenses, savings, investments, net worth, FIRE progress, an income vs expenses chart, expense breakdown and budget utilisation" src="docs/screenshots/dashboard-light.png" />
+</picture>
+
+<p align="center"><sub>Dashboard in light and dark theme (sample data). The image follows your GitHub theme.</sub></p>
+
 ## Features
 
 | Area | What you get |
