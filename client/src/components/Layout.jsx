@@ -73,9 +73,15 @@ export default function Layout() {
         </nav>
         <div className="sidebar-foot">
           <div className="row between">
-            <span className="ellipsis" title={user?.email}>
-              {user?.name}
-            </span>
+            <div className="profile" title={user?.email}>
+              <span className="avatar" aria-hidden="true">
+                <Icon name="user" />
+              </span>
+              <div className="profile-text">
+                <span className="profile-name ellipsis">{user?.name}</span>
+                <span className="profile-email ellipsis">{user?.email}</span>
+              </div>
+            </div>
             <button className="icon-btn" onClick={logout} title="Sign out" aria-label="Sign out">
               <Icon name="logout" />
             </button>
