@@ -1,0 +1,15 @@
+{
+  "name": "wealthfolio",
+  "private": true,
+  "scripts": {
+    "setup": "cd server && uv venv .venv && uv pip install -p .venv/bin/python -e '.[dev]' && cd ../client && npm install",
+    "migrate": "cd server && .venv/bin/alembic upgrade head",
+    "dev:api": "cd server && .venv/bin/alembic upgrade head && .venv/bin/uvicorn app.main:app --reload --port 8000",
+    "dev:web": "cd client && npm run dev",
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev:api\" \"npm run dev:web\"",
+    "test": "cd server && .venv/bin/pytest -q"
+  },
+  "devDependencies": {
+    "concurrently": "9.1.2"
+  }
+}
