@@ -140,8 +140,8 @@ export default function Dashboard() {
                 data={{
                   labels: d.trend.map((t) => fmtMonth(t.month)),
                   datasets: [
-                    { label: 'Income', data: d.trend.map((t) => Number(t.income)), backgroundColor: colors.positive, borderRadius: 4 },
-                    { label: 'Expenses', data: d.trend.map((t) => Number(t.expense)), backgroundColor: colors.negative, borderRadius: 4 },
+                    { label: 'Income', data: d.trend.map((t) => Number(t.income)), backgroundColor: colors.series[1], borderRadius: 4 },
+                    { label: 'Expenses', data: d.trend.map((t) => Number(t.expense)), backgroundColor: colors.series[3], borderRadius: 4 },
                   ],
                 }}
                 options={moneyChartOptions(colors)}
@@ -182,8 +182,8 @@ export default function Dashboard() {
                     {
                       label: 'Net worth',
                       data: nwHist.map((h) => Number(h.net_worth)),
-                      borderColor: colors.primary,
-                      backgroundColor: colors.primary + '22',
+                      borderColor: colors.series[0],
+                      backgroundColor: colors.series[0] + '1f',
                       fill: true,
                       tension: 0.3,
                       pointRadius: 3,

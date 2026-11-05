@@ -161,7 +161,7 @@ export default function Fire() {
                       data={{
                         labels: p.projection.map((r) => `Age ${r.age}`),
                         datasets: [
-                          { label: 'Projected portfolio', data: p.projection.map((r) => Number(r.portfolio)), borderColor: colors.primary, backgroundColor: colors.primary + '22', fill: true, tension: 0.25, pointRadius: 0 },
+                          { label: 'Projected portfolio', data: p.projection.map((r) => Number(r.portfolio)), borderColor: colors.series[0], backgroundColor: colors.series[0] + '1f', fill: true, tension: 0.25, pointRadius: 0 },
                           { label: 'FIRE number (inflation-adjusted)', data: p.projection.map((r) => Number(r.fire_number)), borderColor: colors.warning, borderDash: [5, 5], tension: 0.25, pointRadius: 0 },
                         ],
                       }}

@@ -142,7 +142,7 @@ export default function NetWorth() {
                 data={{
                   labels: d.history.map((h) => fmtMonth(h.month)),
                   datasets: [
-                    { label: 'Net worth', data: d.history.map((h) => Number(h.net_worth)), borderColor: colors.primary, backgroundColor: colors.primary + '22', fill: true, tension: 0.3, pointRadius: 3 },
+                    { label: 'Net worth', data: d.history.map((h) => Number(h.net_worth)), borderColor: colors.series[0], backgroundColor: colors.series[0] + '1f', fill: true, tension: 0.3, pointRadius: 3 },
                     { label: 'Assets', data: d.history.map((h) => Number(h.total_assets)), borderColor: colors.positive, borderDash: [4, 4], tension: 0.3, pointRadius: 2 },
                     { label: 'Liabilities', data: d.history.map((h) => Number(h.total_liabilities)), borderColor: colors.negative, borderDash: [4, 4], tension: 0.3, pointRadius: 2 },
                   ],

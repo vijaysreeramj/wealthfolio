@@ -13,8 +13,11 @@ import {
 import { inr, inrShort } from './format'
 
 Chart.register(ArcElement, BarElement, CategoryScale, LinearScale, LineElement, PointElement, Tooltip, Legend, Filler)
-Chart.defaults.font.family = getComputedStyle(document.documentElement).getPropertyValue('--font') || 'system-ui'
+Chart.defaults.font.family = "'Inter Variable', 'Inter', system-ui, sans-serif"
 Chart.defaults.maintainAspectRatio = false
+Chart.defaults.font.size = 12
+Chart.defaults.elements.bar.borderRadius = 4
+Chart.defaults.set('datasets.bar', { maxBarThickness: 28 })
 
 /** Common options for money charts, themed from CSS tokens. */
 export function moneyChartOptions(colors, { stacked = false, legend = true } = {}) {

@@ -218,7 +218,7 @@ export default function Budgets() {
                           labels: history.data.map((h) => fmtMonth(h.month)),
                           datasets: [
                             { label: 'Budget', data: history.data.map((h) => Number(h.total_budget)), backgroundColor: colors.grid, borderRadius: 4 },
-                            { label: 'Spent', data: history.data.map((h) => Number(h.total_spent)), backgroundColor: colors.primary, borderRadius: 4 },
+                            { label: 'Spent', data: history.data.map((h) => Number(h.total_spent)), backgroundColor: colors.series[0], borderRadius: 4 },
                           ],
                         }}
                         options={moneyChartOptions(colors)}

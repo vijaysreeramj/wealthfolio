@@ -6,6 +6,7 @@ import { AuthProvider, useAuth } from './hooks/auth'
 import { DataProvider } from './hooks/data'
 import { PeriodProvider } from './hooks/period'
 import { ThemeProvider } from './hooks/theme'
+import '@fontsource-variable/inter'
 import './lib/charts'
 import './styles/global.css'
 
