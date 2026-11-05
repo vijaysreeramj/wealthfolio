@@ -4,6 +4,8 @@ import Layout from './components/Layout'
 import { useAuth } from './hooks/auth'
 import { useTheme } from './hooks/theme'
 import Auth from './pages/Auth'
+import Budgets from './pages/Budgets'
+import Dashboard from './pages/Dashboard'
 import Placeholder from './pages/Placeholder'
 import Settings from './pages/Settings'
 import Transactions from './pages/Transactions'
@@ -23,9 +25,9 @@ export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route index element={<Placeholder title="Dashboard" icon="dashboard" />} />
+        <Route index element={<Dashboard />} />
         <Route path="transactions" element={<Transactions />} />
-        <Route path="budgets" element={<Placeholder title="Budgets" icon="budget" />} />
+        <Route path="budgets" element={<Budgets />} />
         <Route path="investments" element={<Placeholder title="Investments" icon="investments" />} />
         <Route path="net-worth" element={<Placeholder title="Net Worth" icon="networth" />} />
         <Route path="goals" element={<Placeholder title="Financial Goals" icon="goals" />} />
