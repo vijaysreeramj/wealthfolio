@@ -42,7 +42,7 @@ export function doughnutOptions(colors) {
     responsive: true,
     cutout: '68%',
     plugins: {
-      legend: { position: 'right', labels: { color: colors.text, boxWidth: 10, boxHeight: 10, usePointStyle: true } },
+      legend: { position: window.innerWidth < 600 ? 'bottom' : 'right', labels: { color: colors.text, boxWidth: 10, boxHeight: 10, usePointStyle: true } },
       tooltip: {
         callbacks: {
           label: (ctx) => {

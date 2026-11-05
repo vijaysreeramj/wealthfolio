@@ -22,7 +22,9 @@ export default function Transactions() {
     const t = setTimeout(() => setFilters((f) => ({ ...f, q: search })), 300)
     return () => clearTimeout(t)
   }, [search])
-  useEffect(() => setPage(1), [filters, period.start, period.end])
+  useEffect(() => {
+    setPage(1)
+  }, [filters, period.start, period.end])
 
   const refs = useApi(() => Promise.all([api.get('/accounts'), api.get('/categories')]), [])
   const [accounts, categories] = refs.data || [[], []]

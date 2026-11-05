@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import Icon from './Icon'
 import QuickAdd from './QuickAdd'
@@ -50,7 +50,9 @@ export default function Layout() {
   const location = useLocation()
   const current = NAV.find((n) => (n.to === '/' ? location.pathname === '/' : location.pathname.startsWith(n.to)))
 
-  useEffect(() => setMenuOpen(false), [location.pathname])
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [location.pathname])
 
   return (
     <div className="shell">
@@ -95,7 +97,9 @@ export default function Layout() {
           </button>
         </header>
         <main className="content">
-          <Outlet />
+          <Suspense fallback={<div className="card card-pad muted">Loading…</div>}>
+            <Outlet />
+          </Suspense>
         </main>
       </div>
 

@@ -16,6 +16,8 @@ class Settings(BaseSettings):
     cookie_secure: bool = False
     anthropic_api_key: str = ""
     advisor_model: str = "claude-opus-5-5"
+    # low | medium | high | xhigh | max. Higher = deeper research, more tokens.
+    advisor_effort: str = "high"
 
 
 @lru_cache
