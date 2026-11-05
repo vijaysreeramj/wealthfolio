@@ -6,6 +6,7 @@ import { useTheme } from './hooks/theme'
 import Auth from './pages/Auth'
 import Budgets from './pages/Budgets'
 import Dashboard from './pages/Dashboard'
+import Investments from './pages/Investments'
 import Placeholder from './pages/Placeholder'
 import Settings from './pages/Settings'
 import Transactions from './pages/Transactions'
@@ -28,7 +29,7 @@ export default function App() {
         <Route index element={<Dashboard />} />
         <Route path="transactions" element={<Transactions />} />
         <Route path="budgets" element={<Budgets />} />
-        <Route path="investments" element={<Placeholder title="Investments" icon="investments" />} />
+        <Route path="investments" element={<Investments />} />
         <Route path="net-worth" element={<Placeholder title="Net Worth" icon="networth" />} />
         <Route path="goals" element={<Placeholder title="Financial Goals" icon="goals" />} />
         <Route path="fire" element={<Placeholder title="FIRE Tracker" icon="fire" />} />

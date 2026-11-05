@@ -1,30 +1,28 @@
 import { useState } from 'react'
-import { Modal } from './ui'
+import { QuickInvestment } from './InvestmentForms'
 import TransactionForm from './TransactionForm'
+import { Modal } from './ui'
 
-// Extra quick-add tabs (e.g. investments) register here as features are added.
-export const extraQuickAddTabs = []
+const TABS = [
+  ['expense', 'Expense'],
+  ['income', 'Income'],
+  ['transfer', 'Transfer'],
+  ['investment', 'Investment'],
+]
 
 export default function QuickAdd({ onClose, initialTab = 'expense' }) {
   const [tab, setTab] = useState(initialTab)
-  const tabs = [
-    ['expense', 'Expense'],
-    ['income', 'Income'],
-    ['transfer', 'Transfer'],
-    ...extraQuickAddTabs.map((t) => [t.key, t.label]),
-  ]
-  const extra = extraQuickAddTabs.find((t) => t.key === tab)
   return (
     <Modal title="Quick add" onClose={onClose}>
       <div className="tabs" role="tablist">
-        {tabs.map(([key, text]) => (
+        {TABS.map(([key, text]) => (
           <button key={key} role="tab" aria-selected={tab === key} className={tab === key ? 'on' : ''} onClick={() => setTab(key)}>
             {text}
           </button>
         ))}
       </div>
-      {extra ? (
-        <extra.Component onDone={onClose} />
+      {tab === 'investment' ? (
+        <QuickInvestment onDone={onClose} />
       ) : (
         <TransactionForm key={tab} defaultType={tab} hideTypeSwitch onDone={onClose} />
       )}

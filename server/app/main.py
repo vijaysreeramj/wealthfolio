@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from .db import init_engine
-from .routers import accounts, auth, budgets, categories, dashboard, transactions
+from .routers import accounts, auth, budgets, categories, dashboard, investments, transactions
 
 
 @asynccontextmanager
@@ -14,7 +14,7 @@ async def lifespan(app: FastAPI):
 
 def create_app(use_lifespan: bool = True) -> FastAPI:
     app = FastAPI(title="Wealthfolio API", version="0.1.0", lifespan=lifespan if use_lifespan else None)
-    for module in (auth, accounts, categories, transactions, budgets, dashboard):
+    for module in (auth, accounts, categories, transactions, budgets, dashboard, investments):
         app.include_router(module.router)
 
     @app.get("/api/health")
