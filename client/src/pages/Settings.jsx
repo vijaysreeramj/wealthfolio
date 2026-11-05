@@ -75,7 +75,7 @@ function CategoryForm({ initial, onDone }) {
   const [form, setForm] = useState({
     name: initial?.name || '',
     kind: initial?.kind || 'expense',
-    color: initial?.color || '#0f766e',
+    color: initial?.color || '#1e40af',
     is_archived: initial?.is_archived || false,
   })
   const set = (k) => (v) => setForm((f) => ({ ...f, [k]: v?.target ? v.target.value : v }))

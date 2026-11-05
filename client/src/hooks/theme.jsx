@@ -65,8 +65,8 @@ export function useChartColors() {
       info: v('--info'),
       series:
         resolved === 'dark'
-          ? ['#2dd4bf', '#93b4fd', '#fbbf24', '#f472b6', '#a78bfa', '#4ade80', '#fb923c', '#67e8f9', '#e879f9', '#a3a3a3']
-          : ['#0f766e', '#2563eb', '#d97706', '#db2777', '#7c3aed', '#16a34a', '#ea580c', '#0891b2', '#c026d3', '#64748b'],
+          ? ['#6ea2ff', '#22d3ee', '#fbbf24', '#f472b6', '#a78bfa', '#4ade80', '#fb923c', '#94a3b8', '#e879f9', '#2dd4bf']
+          : ['#1e40af', '#0891b2', '#d97706', '#db2777', '#7c3aed', '#16a34a', '#ea580c', '#64748b', '#c026d3', '#0d9488'],
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resolved])
